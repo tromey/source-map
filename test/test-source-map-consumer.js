@@ -1302,7 +1302,7 @@ exports['test webpack URL resolution'] = async function (assert) {
   var consumer = await new SourceMapConsumer(map);
 
   assert.equal(consumer.sources.length, 1);
-  assert.equal(consumer.sources[0], "webpack:///webpack/bootstrap 67e184f9679733298d44");
+  assert.equal(consumer.sources[0], "webpack:///webpack/bootstrap%2067e184f9679733298d44");
 
   consumer.destroy();
 };
@@ -1319,7 +1319,7 @@ exports['test webpack URL resolution with sourceMapURL'] = async function (asser
   var consumer = await new SourceMapConsumer(map, 'http://www.example.com/q.js.map');
 
   assert.equal(consumer.sources.length, 1);
-  assert.equal(consumer.sources[0], "webpack:///webpack/bootstrap 67e184f9679733298d44");
+  assert.equal(consumer.sources[0], "webpack:///webpack/bootstrap%2067e184f9679733298d44");
 
   consumer.destroy();
 };
